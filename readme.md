@@ -1,0 +1,3 @@
+Investigating differences in shutdown contingency plans between the Obama and Trump administrations.
+
+`url-parse.js` is a node script intended to run over the html snippets scraped from publicly available contingency plans ([current/Trump administration](https://www.whitehouse.gov/omb/information-for-agencies/agency-contingency-plans/)) ([Obama-era](https://obamawhitehouse.archives.gov/omb/contingency-plans)), and in the case of the Obama ones, return URLs from the Wayback Machine where they are archived. (But the script is pretty hacky so customization btw administrations is going to look like commenting code chunks at the moment).
