@@ -1,9 +1,16 @@
+#!/usr/bin/env node
 var fs = require('fs');
 
-// Run with --json to get a JSON array instead of newline-delimited list
+// Lazy, no-dependency option parsing.
+// Usage:
+//   url-parse.js [--json] PATH_TO_HTML_FILE
+// Options:
+//   --json             Output a JSON array instead of a newline-delimited list
+//   PATH_TO_HTML_FILE  Path to the HTML to parse links from
+const htmlFile = process.argv.slice(2).find(arg => !arg.startsWith('-'));
 const outputJson = process.argv.includes('--json');
 
-const htmlString = fs.readFileSync('./obama-contingency-plans.html').toString();
+const htmlString = fs.readFileSync(htmlFile).toString();
 
 // This is the date you want a Wayback snapshot from (note that month is 0-based, while the rest are not)
 const waybackDate = new Date(2016, 0, 1);
