@@ -1,13 +1,10 @@
 var fs = require('fs');
 
-const htmlString = fs.readFileSync('./2019-01-19-obama-contingency-plans').toString();
-
-// This should be the above file as a string
-// const htmlString = `<ul><li><a href=…`;
+const htmlString = fs.readFileSync('./obama-contingency-plans.html').toString();
 
 // This is the date you want a Wayback snapshot from (note that month is 0-based, while the rest are not)
 const waybackDate = new Date(2016, 0, 1);
-const waybackTimestamp = '${waybackDate.getFullYear()}${waybackDate.getMonth() + 1}${waybackDate.getDate()}';
+const waybackTimestamp = `${waybackDate.getFullYear()}${waybackDate.getMonth() + 1}${waybackDate.getDate()}`;
 
 // Figure out the URLs
 const urls = [];
